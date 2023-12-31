@@ -1,0 +1,52 @@
+
+.listing_cont {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: normal;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 2rem;
+  
+
+    
+}
+
+.card {
+    width: 270px;
+    border: 0px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card:hover{
+opacity: 0.8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Style for the image */
+.card img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Style for the title */
+.card h3 {
+    margin-top: 12px;
+    font-size: 1.2em;
+}
+
+/* Style for the price */
+.card .price {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #FF385C;
+    font-size: 1.1em;
+}
+
+/* #flash{
+    
+} */

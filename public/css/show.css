@@ -1,0 +1,162 @@
+.show_card {
+    width: 40vw;
+   
+    margin: auto;
+    height: fit-content;
+    padding-bottom: 2rem;
+}
+.show_card a i,
+.show_card a
+{
+  color: #ff385dad;
+}
+
+.show_card img {
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+#owned_by {
+    font-size: small;
+    color: #ff385db3;
+    font-weight: 300;
+}
+
+.show_card h3 {
+    font-size: 2rem;
+
+}
+
+.show_card h4 {
+    font-size: 1rem;
+
+    margin-top: 13px;
+}
+
+.show_card h4 i {
+    color: #FF385C;
+}
+
+.show_card .price {
+    font-weight: bold;
+    color: #27ae60;
+    font-size: 1.1em;
+}
+
+.show_card .book {
+    background-color: #FF385C;
+    display: block;
+    width: 100%;
+    margin: auto;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    height: 2rem;
+    border: 0px;
+}
+
+.show_card .book:hover {
+    background-color: #ff385dd4;
+
+}
+
+.edbuttons {
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    margin: 10px auto;
+}
+
+.edbuttons a {
+    background-color: #FF385C;
+    color: white;
+    border-radius: 10px;
+    height: 2rem;
+    width: 49.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edbuttons a:hover {
+    background-color: #ff385dd4;
+}
+
+.review_cont {
+  
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.review_box {
+    width: 45%;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    float: left;
+    padding-bottom: 10px;
+}
+
+.review_box p {
+    margin: 0px 0;
+    font-size: 0.75rem;
+}
+
+.review_box #owner {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.review_box #owner i {
+    font-weight: 300;
+    color: #2b2929;
+}
+
+
+.review_box a {
+    font-size: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 4px 6px;
+    border-radius: 5px;
+}
+
+.review_box a:hover {
+    background-color: #333;
+}
+
+/* Clear float to prevent layout issues */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media (max-width:700px) {
+    .show_card {
+        width: 90vw;
+       
+        margin: auto;
+    }
+
+    .show_card img {
+        height: 40vh;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+    .review_box {
+        width: 90%
+    }
+   
+}

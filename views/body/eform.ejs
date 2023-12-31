@@ -1,0 +1,27 @@
+<% layout('../layouts/boilerplate') %>
+
+    <body>
+        <form action="/edit/<%= listing._id %>" method="post" class="addform" enctype="multipart/form-data">
+            <h3>Edit Information</h3>
+            <a href="/home" id="cross"><i class="ri-close-line"></i></a>
+            <input type="text" name="title" placeholder="Enter title" value="<%= listing.title %>" required><br>
+            <input type="text" name="disc" placeholder="Enter description" value="<%= listing.disc %>" required><br>
+            <input type="file" name="image" placeholder="Under mantinance" ><br>
+            <input type="number" name="price" placeholder="Enter price" value="<%= listing.price%>" required><br>
+            <input type="text" name="location" placeholder="Enter Location" value="<%= listing.location %>"
+                required><br>
+            <input type="text" name="country" placeholder="Enter country" value="<%= listing.country%>" required><br>
+            <label for="ctgry">Choose Category:</label>
+            <select id="ctgry" name="ctgry">
+                <option value="Boat">Boats</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Snow">Snow</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Rainy">Rainy</option>
+                <option value="Ancient">Ancient</option>
+                <option value="Hill">Hills</option>
+            </select>
+            <button type="submit">Submit</button>
+
+        </form>
+    </body>

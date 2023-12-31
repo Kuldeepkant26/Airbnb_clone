@@ -1,0 +1,159 @@
+<% layout('../layouts/boilerplate') %>
+
+    <body>
+        <div class="ctgrys">
+            <a href="/home" >
+                <div class="ctgry">
+                    <i class="ri-gallery-view-2"></i>
+                    <p>All</p>
+                </div>
+            </a>
+            <a href="/birthday">
+                <div class="ctgry">
+                    <i class="ri-cake-2-line"></i>
+                    <p>Birthday</p>
+                </div>
+            </a>
+            <a href="/snow">
+                <div class="ctgry">
+                    <i class="ri-snowy-fill"></i>
+                    <p>Snow</p>
+                </div>
+            </a>
+            <a href="/hotel">
+                <div class="ctgry">
+                    <i class="ri-hotel-bed-fill"></i>
+                    <p>Hotels</p>
+                </div>
+            </a>
+            <a href="/boat">
+                <div class="ctgry">
+                    <i class="ri-sailboat-fill"></i>
+                    <p>Boats</p>
+                </div>
+            </a>
+            <a href="/rainy">
+                <div class="ctgry">
+                    <i class="ri-rainy-line"></i>
+                    <p>Rainy</p>
+                </div>
+            </a>
+            <a href="/ancient" style="border-bottom:1px solid black ;">
+                <div class="ctgry">
+                    <i class="ri-ancient-gate-line"></i>
+                    <p>Ancient</p>
+                </div>
+            </a>
+            <a href="/hills">
+    
+                <div class="ctgry">
+                    <img src="/images/ctgry1.jpg" alt="">
+                    <p>Hills</p>
+                </div>
+            </a>
+           
+            <!-- <div class="ctgry">
+                <img src="/images/ctgry3.jpg" alt="">
+                <p>Island</p>
+            </div>
+            <div class="ctgry">
+                <img src="/images/ctgry4.jpg" alt="">
+                <p>Snow</p>
+            </div>
+            <div class="ctgry">
+                <img src="/images/ctgry5.jpg" alt="">
+                <p>Advanture</p>
+            </div>
+            <div class="ctgry">
+                <i class="ri-tent-fill"></i>
+                <p>Tent</p>
+            </div>
+    
+            <div class="ctgry">
+                <i class="ri-thunderstorms-fill"></i>
+                <p>Thunder</p>
+            </div> -->
+        </div>
+        <div class="show_card">
+            <a href="/home"><i class="ri-arrow-left-s-line"></i>Back</a>
+            <img src="<%= listing.image.url %>" alt="">
+            <% if(listing.user){ %>
+                <h4 id="owned_by">Owned by : <%= listing.user.username %>
+                        <% } %>
+                </h4>
+                <h3>
+                    <%= listing.title %>
+                </h3>
+                <h4>
+                    <%= listing.disc %>
+                </h4>
+                <h4 class="price">&#8377;<%= listing.price.toLocaleString('en-IN') %>/night
+                </h4>
+                <h4>
+                    <i class="ri-map-pin-line"></i> <%= listing.location %>,<%= listing.country %>
+                </h4>
+                <button class="book">Book now</button>
+                <div class="edbuttons">
+                    <% if(currUser){ %>
+                        <% if(listing.user){ %>
+
+                            <%if( currUser.username===listing.user.username ){ %>
+                                <a href="/edit/<%= listing._id %>">Edit</a>
+                                <a href="/delete/<%= listing._id %>">Delete</a>
+                                <% } %>
+                                    <% } %>
+
+                                        <% } %>
+                </div>
+                <hr>
+                <p>Leave a Review</p>
+
+                <form action="/review/add/<%= listing._id %>" method="post" class="addform">
+                   
+                    <fieldset class="starability-slot">
+                        
+                        <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked
+                            aria-label="No rating." />
+                        <input type="radio" id="first-rate1" name="rating" value="1" />
+                        <label for="first-rate1" title="Terrible">1 star</label>
+                        <input type="radio" id="first-rate2" name="rating" value="2" />
+                        <label for="first-rate2" title="Not good">2 stars</label>
+                        <input type="radio" id="first-rate3" name="rating" value="3" />
+                        <label for="first-rate3" title="Average">3 stars</label>
+                        <input type="radio" id="first-rate4" name="rating" value="4" />
+                        <label for="first-rate4" title="Very good">4 stars</label>
+                        <input type="radio" id="first-rate5" name="rating" value="5" />
+                        <label for="first-rate5" title="Amazing">5 stars</label>
+                    </fieldset>
+                    <input type="text" name="comment" required placeholder="comment">
+                    <button type="submit">Add review</button>
+                </form>
+                <hr>
+                <% if(listing.reviews){ %>
+                    <p>All reviews</p>
+                    <div class="review_cont">
+                        <% for(review of listing.reviews){ %>
+                            <div class="review_box">
+                                <% if(review.owner){ %>
+                                    <p id="owner"><i class="ri-user-5-fill"></i>
+                                        <%= review.owner.username%>
+                                    </p>
+                                    <% } %>
+                                        <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                                        <p>
+                                            <%= review.comment %> .
+                                        </p>
+
+
+
+                                        </p>
+                                        <% if(currUser &&review.owner.username===currUser.username ){ %>
+                                            <a href="/review/delete/<%= review._id %>/<%= listing._id %>">Delete</a>
+                                            <% } %>
+                            </div>
+                            <% } %>
+                    </div>
+
+                    <% } %>
+        </div>
+    </body>

@@ -1,0 +1,51 @@
+.addform {
+    max-width: 350px;
+    margin: 0 auto;
+   
+    position: relative;
+    margin-top: 1rem;
+}
+#cross{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    color: #FF385C;
+}
+.addform h3 {
+    color: #FF385C;
+   
+}
+
+/* Style for form elements */
+.addform input[type="text"],
+.addform input[type="number"],
+.addform input[type="password"],
+.addform input[type="file"],
+.addform select {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #FF385C;
+    margin-bottom: 15px;
+}
+
+/* Style for submit button */
+.addform button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #FF385C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Style for select label */
+.addform label {
+    display: block;
+    margin-bottom: 5px;
+}
+button:hover{
+    opacity: 0.7;
+}

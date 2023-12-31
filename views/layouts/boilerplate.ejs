@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap cdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- remix icon cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/addform.css">
+    <link rel="stylesheet" href="/css/show.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/rating.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding-top: 4rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .ctgrys {
+            width: 30%;
+
+            border-radius: 90px;
+            display: flex;
+            align-items: center;
+            overflow-x: scroll;
+            /* Enable horizontal scrolling */
+            white-space: nowrap;
+            /* Keep items in a single line */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+            margin: auto;
+          margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+
+        .ctgrys::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for Chrome, Safari, and Opera */
+        }
+
+        .ctgry {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 1rem;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+        .ctgrys a{
+            color: rgb(58, 56, 56);
+        }
+        .ctgry:hover{
+            opacity: 1;
+        }
+        .ctgry img{
+            height: 1.2rem;
+        }
+
+        @media (max-width:700px) {
+            .ctgrys {
+                width: 90%;
+
+            }
+        }
+       
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/home"><img src="/images/logo.png" alt="" class="logo"></a> 
+        </div>
+        <ul class="nav-links">
+            
+            <li><a href="/home">Home</a></li>
+            <li><a href="/add" id="add">Airbnb your home</a></li>
+            <% if(!currUser){ %>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/login">Login</a></li>
+                <% } %>
+                    <% if(currUser){ %>
+                        <li><a href="/logout">Logout</a></li>
+                        <% } %>
+
+
+
+        </ul>
+        <div class="burger">
+            <div class="line1 line"></div>
+            <div class="line2 line"></div>
+            <div class="line3 line"></div>
+        </div>
+    </nav>
+    
+    <% if(success && success.length){ %>
+        <div id="flash" class="alert alert-primary alert-dismissible fade show col-6 offset-3" role="alert">
+            <%= success %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+            <%- body %>
+                <footer class="footer">
+                    <div class="footer-content">
+                        <div class="footer-section about">
+                            <h2>About Us</h2>
+                            <p>This is dynamic webiste , with login & Signup implemented , error handling , validation all are working fine</p>
+                            <div class="socials">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer-section contact">
+                            <h2>Contact Information</h2>
+                            <p>Email: kuldeepkant26.com</p>
+                            <p>Phone: +1234567890</p>
+                            <p>Address: 123, Street Name, City</p>
+                        </div>
+                        <div class="footer-section links">
+                            <h2>Quick Links</h2>
+                            <ul>
+                                <li><a href="/home">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        &copy; 2023 Airbnb.com | Designed by Kuldeep Kant
+                    </div>
+                </footer>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="/js/nav.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<% layout('../layouts/boilerplate') %>
+<body>
+    <div class="ctgrys">
+
+        <a href="/home" >
+            <div class="ctgry">
+                <i class="ri-gallery-view-2"></i>
+                <p>All</p>
+            </div>
+        </a>
+        <a href="/birthday" style="border-bottom:1px solid black ;">
+            <div class="ctgry">
+                <i class="ri-cake-2-line"></i>
+                <p>Birthday</p>
+            </div>
+        </a>
+        <a href="/snow">
+            <div class="ctgry">
+                <i class="ri-snowy-fill"></i>
+                <p>Snow</p>
+            </div>
+        </a>
+        <a href="/hotel">
+            <div class="ctgry">
+                <i class="ri-hotel-bed-fill"></i>
+                <p>Hotels</p>
+            </div>
+        </a>
+        <a href="/boat">
+            <div class="ctgry">
+                <i class="ri-sailboat-fill"></i>
+                <p>Boats</p>
+            </div>
+        </a>
+        <a href="/rainy">
+            <div class="ctgry">
+                <i class="ri-rainy-line"></i>
+                <p>Rainy</p>
+            </div>
+        </a>
+        <a href="/ancient">
+
+            <div class="ctgry">
+                <i class="ri-ancient-gate-line"></i>
+                <p>Ancient</p>
+            </div>
+        </a>
+        <a href="/hills">
+
+            <div class="ctgry">
+                <img src="/images/ctgry1.jpg" alt="">
+                <p>Hills</p>
+            </div>
+        </a>
+        <!-- <div class="ctgry">
+            <img src="/images/ctgry3.jpg" alt="">
+            <p>Island</p>
+        </div>
+        <div class="ctgry">
+            <img src="/images/ctgry4.jpg" alt="">
+            <p>Snow</p>
+        </div>
+        <div class="ctgry">
+            <img src="/images/ctgry5.jpg" alt="">
+            <p>Advanture</p>
+        </div>
+        <div class="ctgry">
+            <i class="ri-tent-fill"></i>
+            <p>Tent</p>
+        </div>
+
+        <div class="ctgry">
+            <i class="ri-thunderstorms-fill"></i>
+            <p>Thunder</p>
+        </div> -->
+    </div>
+        <div class="listing_cont">
+            <% for(listing of listings){ %>
+                <% if(listing.ctgry=="Birthday" ){ %>
+                    <a href="/show/<%= listing._id %>">
+                        <div class="card">
+                            <img src="<%= listing.image.url %>" alt="Product Image">
+                            <h3>
+                                <%= listing.title %>,<%= listing.country %>
+                            </h3>
+                            <p class="price">
+                                &#8377;<%= listing.price.toLocaleString('en-IN') %>/night
+                            </p>
+                        </div>
+                    </a>
+                    <% } %>
+                        <% } %>
+        </div>
+    </body>
